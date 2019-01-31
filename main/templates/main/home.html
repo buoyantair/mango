@@ -1,0 +1,19 @@
+{% extends "main/header.html" %}
+
+{% block content %}
+<section class="container">
+  <div class="row d-flex flex-row">
+      {% for recipe in recipes %}
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">{{ recipe.title }}</h5>
+              <p class="card-text">{{ recipe.content|safe }}</p>
+              <p class="card-text"><small class="text-muted">{{ recipe.published }}</small></p>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+  </div>
+</section>
+{% endblock %}
